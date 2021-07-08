@@ -1,0 +1,45 @@
+<mjml>
+    <mj-body>
+    <mj-section>
+        <mj-column>
+        <mj-text>
+            Hello World!
+        </mj-text>
+        </mj-column>
+    </mj-section>
+
+
+    <mj-section>
+        <mj-column>
+            <mj-text>
+                eid: {{emailBase.eid}}
+            </mj-text>
+            <mj-text>
+                email_address: {{emailBase.email_address}}
+            </mj-text>
+            <mj-text>
+                name_first: {{emailBase.name_first}}
+            </mj-text>
+            <mj-text>
+                name_last: {{emailBase.name_last}}
+            </mj-text>
+            <mj-text>
+                user_type: {{emailBase.user_type}}
+            </mj-text>
+        </mj-column>
+
+        <mj-column>
+            <mj-text>
+                alpha: {{alpha}}
+            </mj-text>
+            <mj-text>
+                bravo: {{bravo}}
+            </mj-text>
+        </mj-column>
+    </mj-section>
+
+
+
+    </mj-body>
+</mjml>
+

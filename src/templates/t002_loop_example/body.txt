@@ -1,0 +1,15 @@
+
+
+***************************
+this is the plaintext body
+***************************
+eid: {{emailBase.eid}}
+email_address: {{emailBase.email_address}}
+name_first: {{emailBase.name_first}}
+name_last: {{emailBase.name_last}}
+user_type: {{emailBase.user_type}}
+---------------------------
+{{#lines}}
+    • {{line}}
+{{/lines}}
+***************************
