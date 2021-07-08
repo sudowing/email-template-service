@@ -35,6 +35,7 @@ const emailRouter = ({ logger, templates }) => {
   const router = new Router({ prefix: "/email" });
 
   router.get("/templates", async (ctx) => {
+    logger.info({reqId: ctx.state.reqId},"list templates");
     ctx.response.body = Object.keys(templates);
   });
 
@@ -46,6 +47,9 @@ const emailRouter = ({ logger, templates }) => {
 
     let body = {};
     let status = httpStatus.OK;
+
+    logger.info({reqId, templateId, component},"render email content");
+
     try {
       await validateEmailCall({ templateId, component, emailBase });
       const emailContent = await generateEmailContent(templateId, {
@@ -69,8 +73,8 @@ const emailRouter = ({ logger, templates }) => {
 
 const routers = ({ logger, templates }) => {
   const router = new Router();
-  router.get("/ping", (ctx) => {
-    logger.debug("/ping endpoint called");
+  router.get("/healthz", (ctx) => {
+    logger.info({reqId: ctx.state.reqId},"healthcheck");
     ctx.response.body = {
       reqId: ctx.state.reqId,
       app_port: APP_PORT,
